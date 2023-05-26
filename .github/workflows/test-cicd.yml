@@ -24,4 +24,6 @@ jobs:
         run: pip install -r backend/langchain/requirements.txt
 
       - name: start port
-        run: uvicorn main:app --port 8000 --reload
+        run: |
+          cd backend
+          python langchain/app.py

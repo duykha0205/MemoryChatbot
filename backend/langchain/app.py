@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
+import uvicorn
 
 bot = ConversationChain(
     llm=OpenAI(temperature=0,openai_api_key="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"), 
@@ -39,4 +40,7 @@ def read_root():
 
 
 #RUN APP
-# uvicorn main:app --port 8000 --reload
+# uvicorn app:app --port 8000 --reload
+
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="0.0.0.0", port=int(8000))
