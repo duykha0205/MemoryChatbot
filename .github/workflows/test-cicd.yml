@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r backend/langchain/requirements.txt
 
-      # - name: start port
-      #   run: |
-      #     cd backend
-      #     python langchain/app.py
+      - name: start langchain bot service
+        run: |
+          cd backend
+          make langchain_up
