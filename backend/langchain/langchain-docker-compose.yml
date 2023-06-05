@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  langchain:
+    build:
+      context: .
+    ports:
+      - "2000:2000"
+    command: python app.py
+
+
+# docker-compose -f langchain-docker-compose.yml up -d --build
